@@ -6,16 +6,21 @@
     <link rel="stylesheet" href="/css/style.css">
   </head>
   <body>
-    <form class="unemployedButton" action="/unemployed" method="post">
-      <button>Users looking for work</button>
-    </form>
-    <form class="employedButton" action="/employed" method="post">
-      <button>Users that are employed</button>
-    </form>
-    <form action="/search" method="post">
-      <input type="text" name="search" value="" placeholder="Search by Country or Skill">
-      <button>Search</button>
-    </form>
+    <header>
+      <h1>User Directory</h1>
+      <div class="header">
+        <form class="unemployedButton" action="/unemployed" method="post">
+          <button class="employButton">Users looking for work</button>
+        </form>
+        <form class="employedButton" action="/employed" method="post">
+          <button class="employButton">Users that are employed</button>
+        </form>
+        <form action="/search" method="post">
+          <input type="text" name="search" value="" placeholder="Search by Country or Skill">
+          <button class="employButton">Search</button>
+        </form>
+      </div>
+    </header>
     <div class="container">
       {{#userDirectory}}
       <div class="users">
