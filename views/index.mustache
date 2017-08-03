@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>User Directory</title>
+    <link rel="stylesheet" href="/css/style.css">
+  </head>
+  <body>
+    <form class="unemployedButton" action="/unemployed" method="post">
+      <button>Users looking for work</button>
+    </form>
+    <form class="employedButton" action="/employed" method="post">
+      <button>Users that are employed</button>
+    </form>
+    <form action="/search" method="post">
+      <input type="text" name="search" value="" placeholder="Search by Country or Skill">
+      <button>Search</button>
+    </form>
+    <div class="container">
+      {{#userDirectory}}
+      <div class="users">
+        <a href="/users/{{username}}"><img src="{{avatar}}"></a>
+        <h2 id="name">{{name}}</h2>
+        <h5 id="job">{{job}} {{company}}</h5>
+      </div>
+      {{/userDirectory}}
+    </div>
+  <script src="main.js"></script>
+  </body>
+</html>
