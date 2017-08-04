@@ -25,7 +25,7 @@ routes.post('/employed', function(request, response) {
   let employed = db.get().collection('userDirectory');
 
   employed.find({job: {$nin: [null]}}).toArray((err, userDirectory) => {
-    response.render('unemployed', {userDirectory: userDirectory});
+    response.render('employed', {userDirectory: userDirectory});
   });
 });
 
